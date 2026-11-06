@@ -1,6 +1,5 @@
 import com.sun.net.httpserver.HttpServer;
 import java.net.InetSocketAddress;
-import java.nio.charset.StandardCharsets;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -9,7 +8,8 @@ public class Main {
             String html = "<!DOCTYPE html>"
                     + "<html><head><meta charset=\"UTF-8\"><title>Docker確認課題</title></head>"
                     + "<body><h1>GitHubとDockerの確認課題</h1>"
-                    + "<p>Javaプログラムから表示しています</p></body></html>";
+                    + "<p>Javaプログラムから表示しています</p>"
+                    + "<p>2回目のコミットで追加しました</p></body></html>";
             byte[] response = html.getBytes("UTF-8");
             exchange.getResponseHeaders().set("Content-Type", "text/html; charset=UTF-8");
             exchange.sendResponseHeaders(200, response.length);
